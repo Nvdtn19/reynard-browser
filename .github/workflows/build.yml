@@ -35,6 +35,11 @@ jobs:
       - name: Checkout idevice submodule
         run: git submodule update --init --depth 1 --recursive support/idevice
 
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Update Gecko
         run: ./tools/development/update-gecko.sh
 
